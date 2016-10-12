@@ -1,0 +1,12 @@
+<ivy-module version="2.0">
+    <info organisation="io.wedeploy.example" module="boilerplate-java" />
+    <configurations>
+		<conf name="compile"/>
+		<conf name="runtime" extends="compile"/>
+		<conf name="loader"/>
+	</configurations>
+    <dependencies>
+        <dependency org="org.springframework.boot" name="spring-boot-starter-thymeleaf" rev="1.4.1.RELEASE" conf="compile" />
+		<dependency org="org.springframework.boot" name="spring-boot-loader" rev="1.4.1.RELEASE" conf="loader->default" />
+    </dependencies>
+</ivy-module>
