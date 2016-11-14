@@ -1,6 +1,6 @@
 {
-  "id": "kotlin",
-  "name": "Kotlin",
+  "id": "scala",
+  "name": "Scala",
   "type": "wedeploy/java",
   "hooks": {
     "build": "gradle -Dorg.gradle.native=false clean build -x test"
