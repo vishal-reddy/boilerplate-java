@@ -1,32 +1,12 @@
 group 'io.wedeploy.example'
 version '1.0-SNAPSHOT'
 
-buildscript {
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "http://repo.spring.io/release" }
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
-  }
-}
-
-apply plugin: 'java'
-apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
-
-task run(dependsOn: ':bootRun') << {
-    println 'Boot'
-}
-
-repositories {
-  mavenLocal()
-  mavenCentral()
-  maven { url "http://repo.spring.io/release" }
-}
-
-dependencies {
-  compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+task run(type: Exec) {
+  executable './lein'
+  args 'run'
+  environment PORT: 8080
+  environment NREPL_PORT:7001
+  environment LEIN_HOME: '.'
 }
 
 task wrapper(type: Wrapper) {
